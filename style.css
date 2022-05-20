@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --accent: #00ADB5;
+    --main: #EEEEEE;
+    --dark: #212730;
+    --grey: #393E46;
+}
+* { margin: 0; padding: 0; }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bubblegum Sans', cursive;
+    background-color: var(--dark);
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+header {
+    width: 100%;
+    height: 13vh;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 69;
+    transition: background-color 0.5s ease, height 0.5s ease;
+    top: 0;
+}
+header .logo {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .logo div {
+    background-image: url(images/pizzaLogo.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 80%;
+    width: 10vh;
+    cursor: pointer;
+}
+header .title {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .title h2 {
+    color: var(--main);
+    font-size: 48px;
+    cursor: pointer;
+}
+header nav {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a {
+    color: var(--main);
+    font-size: 24px;
+    text-decoration: none;
+    margin: 0px 12px;
+}
+header nav a:hover {
+    color: var(--accent);
+    transition: color 0.3s;
+}
+header nav a.this {
+    color: var(--accent);
+}
+
+.hero {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 0;
+}
+.hero .text .title {
+    overflow-y: hidden;
+    margin: 12px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.roadMap {
+    background-color: var(--dark);
+    display: flex;
+    height: 90vh;
+    overflow-y: hidden;
+}
+.roadMap:hover .item {
+    width: 23.3333%;
+}
+.roadMap .item {
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    width: 25%;
+    height: 90vh;
+    min-height: 600px;
+    color: var(--main);
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+.roadMap .item::before, .roadMap .item::after {
+    transform: translate3d(0, 0, 0);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.roadMap .item::after {
+    background: rgba(33, 39, 48, 0.8);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.roadMap .item::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 75%);
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(0, 0, 0) translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.roadMap .item:hover {
+    width: 30% !important;
+}
+.roadMap .item:hover::after {
+    opacity: 0;
+}
+.roadMap .item:hover::before {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) translateY(0);
+    transition: opacity 1s ease, transform 1s ease 0.25s;
+}
+.roadMap .item:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.75s ease 0.5s;
+}
+.roadMap .item:hover .bg {
+    filter: grayscale(0);
+}
+.roadMap .content {
+    transform: translate3d(0, 0, 0) translateY(25px);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0 1.618em;
+    top: 55%;
+    opacity: 0;
+}
+.roadMap .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+}
+.roadMap .bg {
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+}
+.roadMap .title p {
+    font-size: 24px;
+}
+.roadMap .content h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.timeline .taitl {
+    line-height: 10vh;
+    text-align: center;
+    background-color: var(--dark);
+    width: 100%;
+    max-width: 100%;
+    height: 10vh;
+    margin: 6px 0px;
+    overflow-y: hidden;
+}
+.timeline .taitl h2 {
+    color: var(--main);
+    font-size: 48px;
+    margin: 0px 12px;
+}
+h1 {
+    font-size: clamp(3.5rem, 14vw, 4.7rem);
+    color: var(--main);
+}
+.hero p {
+    color: var(--main);
+}
+.hero button {
+    background: var(--main);
+    margin: 0.8em;
+    padding: 0.8em 2.5em;
+    border: 2px solid var(--main);
+    transition: all 0.25s, transform 0;
+    cursor: pointer;
+    color: var(--dark);
+}
+.hero .buttons {
+    overflow-x: hidden;
+}
+.hero button.empty {
+    background: none;
+    color: var(--main);
+    border: 2px solid var(--main);
+    margin: 0.8em;
+    padding: 0.8em 3.2em;
+}
+.hero button:hover,
+.hero button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--accent);
+    transform: translateY(-0.25em) !important;
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--main);
+}
+.heroBgVideo {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    z-index: -1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.heroBgVideo iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    /* max-width: 100%; */
+    transform: translate(-50%, -50%);
+}
+@media (min-aspect-ratio: 16/9) {
+    .heroBgVideo iframe {
+        /* height = 100 * (9 / 16) = 56.25 */
+        height: 56.25vw;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .heroBgVideo iframe {
+        /* width = 100 / (9 / 16) = 177.777777 */
+        width: 177.77vh;
+    }
+}
+.popPizza {
+    background: var(--grey);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    min-height: 60vh;
+}
+.popPizza .info {
+    width: calc(50% - 2px);
+    min-height: 60vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.popPizza .info .title {
+    height: 15%;
+    width: 100%;
+    overflow-y: hidden;
+}
+.popPizza .info .content {
+    height: 40%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.popPizza .info .btnbuy {
+    height: 15%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow-x: hidden;
+}
+.popPizza .image {
+    width: calc(50% - 2px);
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popPizza .image div {
+    width: 70%;
+    height: 70%;
+    background: url(images/cheesePizza.jpg);
+    background-position: 25% 75%;
+    background-size: cover;
+}
+.popPizza .divider {
+    width: 4px;
+}
+.popPizza .divider .dividerReal {
+    margin-top: 10vh;
+    height: 40vh;
+    background-color: var(--dark);
+}
+.popPizza .info .buy {
+    background: var(--accent);
+    margin: 0.8em;
+    padding: 0.8em 2.5em;
+    border: 2px solid var(--accent);
+    transition: all 0.25s, transform 0;
+    cursor: pointer;
+    color: var(--main);
+}
+.popPizza .info .buy:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--main);
+    transform: translateY(-0.25em);
+    border-color: var(--main);
+    background-color: var(--main);
+    color: var(--accent);
+}
+.popPizza .info h3 {
+    font-size: 44px;
+    color: var(--main);
+}
+.popPizza .info p.name {
+    font-size: 32px;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+.popPizza .info p.price {
+    font-size: 24px;
+    color: var(--main);
+    margin-bottom: 12px;
+}
+.popPizza .info p.desc {
+    font-size: 16px;
+    color: var(--main);
+    margin: 0px 12px;
+}
+.aboutUs {
+    width: 100%;
+    max-width: 100%;
+    height: 50vh;
+    background-color: var(--dark);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.aboutUs .title {
+    width: 100%;
+    margin: 12px;
+    overflow-y: hidden;
+}
+.aboutUs .title h3 {
+    font-size: 48px;
+    color: var(--main);
+}
+.aboutUs .content {
+    width: 100%;
+    overflow-y: hidden;
+}
+.aboutUs .content p {
+    color: var(--main);
+    font-size: 20px;
+    margin: 12px 48px;
+}
+.arrow {
+    border: solid var(--accent);
+    border-width: 0 9px 9px 0;
+    display: inline-block;
+    padding: 12px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.arrowR {
+    border: solid var(--accent);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: transform 0.5s ease;
+    vertical-align: middle;
+}
+.bannr {
+    height: 50vh;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--grey);
+}
+.bannr .left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bannr .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bannr .left h3 {
+    color: var(--accent);
+    font-size: 48px;
+}
+.bannr .left p {
+    color: var(--main);
+    font-size: 20px;
+}
+.bannr .left div {
+    overflow: hidden;
+}
+.bannr .left div:nth-child(1) {
+    margin-bottom: 12px;
+}
+.bannr .left div:nth-child(2) {
+    padding: 4px;
+}
+.bannr .right div {
+    overflow-x: hidden;
+}
+.bannr .right button {
+    background: var(--accent);
+    margin: 0.8em;
+    padding: 0.8em 2.5em;
+    border: 2px solid var(--accent);
+    transition: all 0.25s, transform 0;
+    cursor: pointer;
+    color: var(--main);
+}
+.bannr .right button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--main);
+    transform: translateY(-0.25em);
+    border-color: var(--main);
+    background-color: var(--main);
+    color: var(--accent);
+}
+footer {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark);
+}
+footer .info {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer .logo {
+    height: 50%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .logo div {
+    background-image: url(images/pizzaLogo.webp);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+footer .info .text {
+    margin-top: 12px;
+    text-align: center;
+}
+footer .info .text p {
+    color: var(--main);
+    position: relative;
+    z-index: 1;
+}
+
+footer .links {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer .links button {
+    background: var(--main);
+    margin: 0.8em;
+    padding: 0.8em 3.5em;
+    border: 2px solid var(--main);
+    transition: all 0.25s, transform 0;
+    cursor: pointer;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+footer .links button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--main);
+    transform: translateY(-0.25em);
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--main);
+}
+footer .links div {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+br.mobile {
+    display: none;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+}
+.copyright p {
+    color: var(--main);
+}
+
+@media only screen and (max-width: 768px) {
+    header .title {
+        display: none;
+    }
+    header .logo {
+        width: 50%;
+    }
+    header nav {
+        width: 50%;
+    }
+    .roadMap {
+        flex-direction: column;
+    }
+    .roadMap .item {
+        width: 100%;
+    }
+    .roadMap:hover .item {
+        width: 100%;
+    }
+    .roadMap .item:hover {
+        width: 100% !important;
+    }
+    /* Day's pizza */
+    .popPizza {
+        flex-direction: column;
+    }
+    .popPizza .divider, .popPizza .image {
+        display: none;
+    }
+    .popPizza .info {
+        width: 100%;
+        height: 60vh;
+        background-image: url(images/mars.jpg);
+        background-position: center center;
+        background-size: cover;
+    }
+    /* banner */
+    .bannr {
+        margin-top: 230vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .bannr .left {
+        width: 100%;
+    }
+    .bannr .right {
+        width: 100%;
+    }
+    .bannr .left p{
+        margin-bottom: 12px;
+    }
+    .bannr .arrowR {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    br.mobile {
+        display: initial;
+    }
+}
+
+/* menu */
+
+.menu {
+    width: 100%;
+    height: 87vh;
+    margin-top: 13vh;
+    overflow-y: hidden;
+}
+.menu .title {
+    text-align: center;
+    width: 100%;
+    background-color: var(--grey);
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+.menu .title h1 {
+    font-size: 42px;
+    color: var(--main);
+}
+.table {
+    width: calc(100% - 24px);
+    min-height: calc(92% - 24px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 12px;
+}
+.table .item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--grey);
+}
+.table .item .pic {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table .item .pic div {
+    background-image: url(images/cheesePizza.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: calc(100% - 12px);
+    width: calc(100% - 24px);
+    margin: 12px;
+    margin-bottom: 0px;
+}
+.table .item .info {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.table .item .info h3 {
+    color: var(--main);
+    font-size: 24px;
+}
+.table .item .info p {
+    color: var(--main);
+    font-size: 16px;
+}
+.table .item .info p:nth-child(1) {
+    color: var(--main);
+    font-size: 20px;
+}
+.table .item .info button {
+    background: var(--accent);
+    margin-top: 12px;
+    padding: 0.8em 2.5em;
+    border: 2px solid var(--accent);
+    transition: all 0.25s;
+    cursor: pointer;
+    color: var(--main);
+}
+.table .item .info button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--main);
+    transform: translateY(-0.25em);
+    border-color: var(--main);
+    background-color: var(--main);
+    color: var(--accent);
+}
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        height: fit-content;
+    }
+    .menu .table {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu .table .item {
+        height: 60vh;
+    }
+}

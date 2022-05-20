@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="logo"> <div onclick="window.location.href='#Hero'"></div> </div>
+        <div class="title"> <h2 onclick="window.location.href='#Hero'">Space Pizza</h2> </div>
+        <nav>
+            <a href="#Hero" class="this">Home</a>
+            <a href="pages/menu.html">Menu</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="Hero">
+
+        <div class="heroBgVideo">
+            <iframe
+                src="https://www.youtube.com/embed/5r4h_4jscDU?controls=0&autoplay=1&mute=1&playlist=5r4h_4jscDU&loop=1"
+                width="1920" height="1080" allow="modestbranding; autoplay;" frameborder="0">Damn it, update your
+                browser!</iframe>
+        </div>
+
+        <div class="text">
+            <div class="title">
+                <h1 class="appearFromBottom">Space Pizza</h1>
+            </div>
+            <div class="title">
+                <p class="appearFromBottom">We deliver delicious pizza to Earth and Moon (delivery to Mars coming soon)</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="empty" id="leftBtn">Menu</button>
+            <button id="rightBtn">About Us</button>
+        </div>
+
+    </section>
+
+    <section class="popPizza">
+        <div class="info">
+            <div class="title">
+                <h3 class="appearFromBottom">Today's pizza</h3>
+            </div>
+            <div class="content">
+                <p class="name leftBtn">Cheese pizza</p>
+                <p class="price leftBtn">0.69 &pi;</p>
+                <p class="desc leftBtn">Very simple cheese pizza, only for cheese enthusiasts.</p>
+            </div>
+            <div class="btnbuy">
+                <button class="buy leftBtn">Order Now</button>
+            </div>
+        </div>
+        <div class="divider">
+            <div class="dividerReal"></div>
+        </div>
+        <div class="image">
+            <div class="fadeIn"></div>
+        </div>
+    </section>
+
+    <section class="aboutUs">
+        <div class="title">
+            <h3 class="appearFromBottom">About Us</h3>
+        </div>
+        <div class="content">
+            <p class="appearFromBottom">We are a pizza network, that has pizzerias all over the world(Earth) and in space! Space pizzeria is in the Alpha station, Space Market area 42. Delicious pizzas, amazing salads, pure drinks and juicy steaks, everything here, in the Space Pizza with affordable prices and world-wide delivery, delivery to moon, delivery to Mars coming soon... <br>
+                You can learn about us and our story here:
+            </p>
+            <p><i class="arrow appearDown"></i></p>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="taitl">
+            <h2 class="appearFromBottom">The Road Map</h2>
+        </div>
+        <div class="roadMap" id="roadMap">
+
+            <div class="item">
+                <div class="bg" style="background-image: url(images/open.jpg); background-position: 60% center;"></div>
+                <div class="title">
+                    <p>2025</p>
+                </div>
+                <div class="content">
+                    <h3>First shop in Lithuania</h3>
+                    <p>We opened our first shop in Lithuania on 2025-04-01. The opening was a success - we gained a lot
+                        of new customers!</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="bg" style="background-image: url(images/spaceMarket.jpg);"></div>
+                <div class="title">
+                    <p>2028</p>
+                </div>
+                <div class="content">
+                    <h3>The real space pizza</h3>
+                    <p>It took some time, but we have accomplished what we wanted. It was in our name. We opened first
+                        space pizzeria in the world! You can find us in the Space Market (launched in 2024)</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="bg" style="background-image: url(images/space.jpg);"></div>
+                <div class="title">
+                    <p>2031</p>
+                </div>
+                <div class="content">
+                    <h3>Fastest delivery</h3>
+                    <p>After you order our pizza, it is gonna be delivered in 30 minutes. Doesn't matter where you are,
+                        doesn't matter when you order.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="bg" style="background-image: url(images/mars.jpg); background-position: 30% center;"></div>
+                <div class="title">
+                    <p>2035</p>
+                </div>
+                <div class="content">
+                    <h3>Delivery to Mars</h3>
+                    <p>Coming soon!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="bannr">
+        <div class="left">
+            <div>
+                <h3 class="appearFromBottom">How about a bite?</h3>
+            </div>
+            <div>
+                <p style="text-align: center;" class="leftBtn">Order our marvelous pizza now &nbsp; <br class="mobile"> <i class="arrowR"></i></p>
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                <button class="rightBtn">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="info">
+            <div class="logo">
+                <div class="fadeIn"></div>
+            </div>
+            <div class="text">
+                <p class="appearDown">Earth orbit, Alpha station, <br>
+                    Space Market, Area 42
+                </p>
+            </div>
+        </div>
+        <div class="links">
+            <div>
+                <button onclick="window.location.href='#Hero'" class="rightBtn">Home</button>
+                <button onclick="window.location.href='/menu'" class="rightBtn">Menu</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>&copy; Space Pizza <s>2022</s> 2032</p>
+    </div>
+</body>
+
+</html>

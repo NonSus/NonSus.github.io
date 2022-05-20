@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    
+    <header id="header">
+        <div class="logo"> <div onclick="window.location.href='../index.html'"></div> </div>
+        <div class="title"> <h2 onclick="window.location.href='../index.html'">Space Pizza</h2> </div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="#Hero" class="this">Menu</a>
+        </nav>
+    </header>
+
+    <section class="menu">
+        <div class="title">
+            <h1 class="appearFromBottom">Menu</h1>
+        </div>
+        <div class="table">
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/cheesePizza.jpg);"></div>
+                </div>
+                <div class="info">
+                    <h3>Cheese Pizza</h3>
+                    <p>0.69 &pi;</p>
+                    <p>Very simple cheese pizza, only for cheese enthusiasts.</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/bussin.jpg); background-size: 180%; background-position-x: 45%;"></div>
+                </div>
+                <div class="info">
+                    <h3>Bussin Pizza</h3>
+                    <p>0.7 &pi;</p>
+                    <p>Our chef decided to mix things up.</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/shroomy.jpg);  background-size: 130%; background-position-y: 45%;"></div>
+                </div>
+                <div class="info">
+                    <h3>Shroomy Pizza</h3>
+                    <p>0.71 &pi;</p>
+                    <p>Some mushrooms... Some onions...</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/peperonish.jpg);"></div>
+                </div>
+                <div class="info">
+                    <h3>Peperonish Pizza</h3>
+                    <p>0.71 &pi;</p>
+                    <p>Similar to peperoni pizza.</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/veggy.jpg); background-size: 150%; background-position-x: 70%;"></div>
+                </div>
+                <div class="info">
+                    <h3>Veggy Pizza</h3>
+                    <p>0.69 &pi;</p>
+                    <p>Kinda vegetarian?</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <div style="background-image: url(../images/bbq.jpg); background-position-x: 0%;"></div>
+                </div>
+                <div class="info">
+                    <h3>BBQ pizza</h3>
+                    <p>0.72 &pi;</p>
+                    <p>Pineapples can be on a pizza!</p>
+                    <button>Order Now</button>
+                </div>
+            </div>
+    </section>
+
+</body>
+</html>
