@@ -330,7 +330,7 @@ h1 {
 .popPizza .image div {
     width: 70%;
     height: 70%;
-    background: url(images/cheesePizza.jpg);
+    background: url(images/cheesePizza.webp);
     background-position: 25% 75%;
     background-size: cover;
 }
@@ -602,7 +602,7 @@ br.mobile {
     .popPizza .info {
         width: 100%;
         height: 60vh;
-        background-image: url(images/mars.jpg);
+        background-image: url(images/mars.webp);
         background-position: center center;
         background-size: cover;
     }
@@ -680,7 +680,7 @@ br.mobile {
     align-items: center;
 }
 .table .item .pic div {
-    background-image: url(images/cheesePizza.jpg);
+    background-image: url(images/cheesePizza.webp);
     background-size: cover;
     background-position: center center;
     height: calc(100% - 12px);
