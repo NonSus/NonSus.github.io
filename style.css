@@ -110,7 +110,7 @@ header nav a.this {
 .roadMap {
     background-color: var(--dark);
     display: flex;
-    height: 90vh;
+    min-height: 90vh;
     overflow-y: hidden;
 }
 .roadMap:hover .item {
@@ -455,6 +455,7 @@ h1 {
 }
 .bannr .left div {
     overflow: hidden;
+    text-align: center;
 }
 .bannr .left div:nth-child(1) {
     margin-bottom: 12px;
@@ -608,7 +609,6 @@ br.mobile {
     }
     /* banner */
     .bannr {
-        margin-top: 230vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -629,6 +629,10 @@ br.mobile {
 
     br.mobile {
         display: initial;
+    }
+
+    .timeline {
+        height: 370vh;
     }
 }
 
