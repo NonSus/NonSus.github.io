@@ -62,10 +62,11 @@ header .title {
     justify-content: center;
     align-items: center;
 }
-header .title h2 {
+header .title a {
     color: var(--main);
     font-size: 48px;
     cursor: pointer;
+    text-decoration: none;
 }
 header nav {
     width: 33.3%;
@@ -81,7 +82,8 @@ header nav a {
     text-decoration: none;
     margin: 0px 12px;
 }
-header nav a:hover {
+header nav a:hover,
+header nav a:focus {
     color: var(--accent);
     transition: color 0.3s;
 }
@@ -102,7 +104,7 @@ header nav a.this {
 }
 .hero .text .title {
     overflow-y: hidden;
-    margin: 12px 0px;
+    margin: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +123,7 @@ header nav a.this {
     position: relative;
     width: 25%;
     height: 90vh;
-    min-height: 600px;
+    /* min-height: 600px; */
     color: var(--main);
     overflow: hidden;
     transition: width 0.5s ease;
@@ -147,23 +149,28 @@ header nav a.this {
     transform: translate3d(0, 0, 0) translateY(50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.roadMap .item:hover {
+.roadMap .item:hover,
+.roadMap .item:focus {
     width: 30% !important;
 }
-.roadMap .item:hover::after {
+.roadMap .item:hover::after,
+.roadMap .item:focus::after {
     opacity: 0;
 }
-.roadMap .item:hover::before {
+.roadMap .item:hover::before,
+.roadMap .item:focus::before {
     opacity: 1;
     transform: translate3d(0, 0, 0) translateY(0);
     transition: opacity 1s ease, transform 1s ease 0.25s;
 }
-.roadMap .item:hover .content {
+.roadMap .item:hover .content,
+.roadMap .item:focus .content {
     opacity: 1;
     transform: translateY(0);
     transition: all 0.75s ease 0.5s;
 }
-.roadMap .item:hover .bg {
+.roadMap .item:hover .bg,
+.roadMap .item:focus .bg {
     filter: grayscale(0);
 }
 .roadMap .content {
@@ -201,6 +208,9 @@ header nav a.this {
     font-size: 24px;
     margin-bottom: 12px;
 }
+.roadMap .content p {
+    line-height: 1.5;
+}
 .timeline .taitl {
     line-height: 10vh;
     text-align: center;
@@ -216,6 +226,27 @@ header nav a.this {
     font-size: 48px;
     margin: 0px 12px;
 }
+
+@media not screen and (hover) { /* Animate when on screen on mobile */
+    .roadMap .seen.item::after {
+        opacity: 0;
+    }
+    .roadMap .seen.item::before {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) translateY(0);
+        transition: opacity 1s ease, transform 1s ease 0.25s;
+    }
+    .roadMap .seen.item .content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.75s ease 0.5s;
+    }
+    .roadMap .seen.item .bg {
+        filter: grayscale(0);
+    }
+}
+
+
 h1 {
     font-size: clamp(3.5rem, 14vw, 4.7rem);
     color: var(--main);
@@ -351,7 +382,8 @@ h1 {
     cursor: pointer;
     color: var(--main);
 }
-.popPizza .info .buy:hover {
+.popPizza .info .buy:hover,
+.popPizza .info .buy:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--main);
     transform: translateY(-0.25em);
     border-color: var(--main);
@@ -380,7 +412,7 @@ h1 {
 .aboutUs {
     width: 100%;
     max-width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     background-color: var(--dark);
     text-align: center;
     display: flex;
@@ -398,13 +430,14 @@ h1 {
     color: var(--main);
 }
 .aboutUs .content {
-    width: 100%;
+    width: 70%;
     overflow-y: hidden;
 }
 .aboutUs .content p {
     color: var(--main);
     font-size: 20px;
-    margin: 12px;
+    margin: 12px 0;
+    line-height: 1.5;
 }
 .arrow {
     border: solid var(--accent);
@@ -475,7 +508,8 @@ h1 {
     cursor: pointer;
     color: var(--main);
 }
-.bannr .right button:hover {
+.bannr .right button:hover,
+.bannr .right button:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--main);
     transform: translateY(-0.25em);
     border-color: var(--main);
@@ -544,7 +578,8 @@ footer .links button {
     text-decoration: none;
 }
 
-footer .links button:hover {
+footer .links button:hover,
+footer .links button:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--main);
     transform: translateY(-0.25em);
     border-color: var(--accent);
@@ -566,6 +601,8 @@ br.mobile {
 .copyright {
     width: 100%;
     text-align: center;
+    background-color: var(--grey);
+    padding: 6px 0;
 }
 .copyright p {
     color: var(--main);
@@ -581,11 +618,18 @@ br.mobile {
     header nav {
         width: 50%;
     }
+    .aboutUs .content {
+        width: 100%;
+    }
+    .aboutUs .content p {
+        margin: 12px;
+    }
     .roadMap {
         flex-direction: column;
     }
     .roadMap .item {
         width: 100%;
+        height: 60vh;
     }
     .roadMap:hover .item {
         width: 100%;
@@ -601,12 +645,24 @@ br.mobile {
         display: none;
     }
     .popPizza .info {
+        position: relative;
         width: 100%;
         height: 60vh;
+        z-index: 1;
+    }
+    .popPizza .info::before {
+        content: "";
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
         background-image: url(images/cheesePizza.webp);
         background-position: top center;
         background-size: cover;
-    }
+        filter: blur(2px) brightness(0.6);
+        z-index: -1;
+      }
     /* banner */
     .bannr {
         flex-direction: column;
@@ -632,7 +688,7 @@ br.mobile {
     }
 
     .timeline {
-        height: 370vh;
+        height: 250vh;
     }
 }
 
@@ -721,7 +777,8 @@ br.mobile {
     cursor: pointer;
     color: var(--main);
 }
-.table .item .info button:hover {
+.table .item .info button:hover,
+.table .item .info button:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--main);
     transform: translateY(-0.25em);
     border-color: var(--main);
@@ -739,5 +796,20 @@ br.mobile {
     }
     .menu .table .item {
         height: 60vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    header {
+        background-color: rgba(0,0,0,0.4) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+        backdrop-filter: saturate(180%) blur(20px) !important; 
+        height: 10vh !important;
     }
 }
